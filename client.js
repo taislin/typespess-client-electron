@@ -1,5 +1,5 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-(function (global){(function (){
+(function (process,global){(function (){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const Atom = require("./lib/atom.js");
@@ -11,6 +11,7 @@ const Sound = require("./lib/sound.js");
 const Matrix = require("./lib/matrix.js");
 const { Eye, Plane } = require("./lib/eye.js");
 const isElectron = require("is-electron");
+
 class TypespessClient extends EventEmitter {
     constructor(wsurl, resRoot = "") {
         super();
@@ -382,8 +383,8 @@ TypespessClient.Eye = Eye;
 TypespessClient.Plane = Plane;
 module.exports = TypespessClient;
 
-}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./lib/atom.js":2,"./lib/audio_loader.js":3,"./lib/component.js":4,"./lib/eye.js":5,"./lib/icon_loader.js":6,"./lib/icon_renderer.js":7,"./lib/lighting.js":8,"./lib/matrix.js":9,"./lib/panels/manager.js":10,"./lib/renderer.js":12,"./lib/sound.js":13,"events":37,"is-electron":38}],2:[function(require,module,exports){
+}).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./lib/atom.js":2,"./lib/audio_loader.js":3,"./lib/component.js":4,"./lib/eye.js":5,"./lib/icon_loader.js":6,"./lib/icon_renderer.js":7,"./lib/lighting.js":8,"./lib/matrix.js":9,"./lib/panels/manager.js":10,"./lib/renderer.js":12,"./lib/sound.js":13,"_process":40,"electron":36,"events":37,"is-electron":38}],2:[function(require,module,exports){
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 const IconRenderer = require("./icon_renderer.js");
@@ -4164,38 +4165,17 @@ class StripPanel {
 module.exports.panel_classes = { StripPanel };
 
 },{"../../client/index.js":1}],34:[function(require,module,exports){
-(function (process,global){(function (){
+(function (global){(function (){
 "use strict";
 const TypespessClient = require("./client/index.js");
 const { Eye, Plane } = TypespessClient;
 const { ParallaxPlane } = require("./code/parallax.js");
-const { app, BrowserWindow } = require('electron');
 // Just a small little polyfill for Edge (fuck you edge by the way)
 for (const collection_class of [HTMLCollection, NodeList, DOMTokenList]) {
     if (!collection_class.prototype[Symbol.iterator]) {
         collection_class.prototype[Symbol.iterator] = Array.prototype[Symbol.iterator];
     }
 }
-//electron stuff
-function createWindow() {
-    const win = new BrowserWindow({
-        width: 1280,
-        height: 720,
-    });
-    win.loadFile('index.html');
-}
-app.whenReady().then(createWindow);
-app.on('window-all-closed', () => {
-    if (process.platform !== 'darwin') {
-        app.quit();
-    }
-});
-app.on('activate', () => {
-    if (BrowserWindow.getAllWindows().length === 0) {
-        createWindow();
-    }
-});
-//end of electron stuff
 const client = new TypespessClient();
 client.importModule(require("./code/alert.js"));
 client.importModule(require("./code/carbon_mob.js"));
@@ -4255,8 +4235,8 @@ else {
     });
 }
 
-}).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./client/index.js":1,"./code/alert.js":14,"./code/carbon_mob.js":15,"./code/hud.js":16,"./code/parallax.js":17,"./code/preload.js":18,"./code/progress_bar.js":19,"./code/projectile.js":20,"./code/splash_screen.js":21,"./code/text_input.js":22,"./code/ui/admin_menu.js":23,"./code/ui/chem_dispenser.js":24,"./code/ui/latejoin.js":25,"./code/ui/login.js":26,"./code/ui/machine_wires.js":27,"./code/ui/new_player.js":28,"./code/ui/preferences.js":29,"./code/ui/spawn_object.js":31,"./code/ui/stack_craft.js":32,"./code/ui/strip.js":33,"_process":40,"electron":36}],35:[function(require,module,exports){
+}).call(this)}).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+},{"./client/index.js":1,"./code/alert.js":14,"./code/carbon_mob.js":15,"./code/hud.js":16,"./code/parallax.js":17,"./code/preload.js":18,"./code/progress_bar.js":19,"./code/projectile.js":20,"./code/splash_screen.js":21,"./code/text_input.js":22,"./code/ui/admin_menu.js":23,"./code/ui/chem_dispenser.js":24,"./code/ui/latejoin.js":25,"./code/ui/login.js":26,"./code/ui/machine_wires.js":27,"./code/ui/new_player.js":28,"./code/ui/preferences.js":29,"./code/ui/spawn_object.js":31,"./code/ui/stack_craft.js":32,"./code/ui/strip.js":33}],35:[function(require,module,exports){
 
 },{}],36:[function(require,module,exports){
 (function (process,__dirname){(function (){

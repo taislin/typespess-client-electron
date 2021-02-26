@@ -2,7 +2,7 @@
   "name": "civ13-client-electron",
   "version": "0.1.0",
   "description": "civ13 in typespess, electron client",
-  "main": "client.js",
+  "main": "main.js",
   "author": "Civ13 Team",
   "license": "AGPL-3.0",
   "repository": {
@@ -22,7 +22,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
-    "package": "npx electron-packager index.html --out=out",
+    "package": "npx electron-packager . --out=out --overwrite -platform=win32 --arch=ia32 --icon=favicon.ico --ignore='\/out' --ignore='\/.git' --ignore='\/.gitattributes' --ignore='\/.gitignore'",
     "start": "npx electron index.html"
   }
 }
