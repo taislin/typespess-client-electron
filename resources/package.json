@@ -22,7 +22,7 @@
     "npm": ">=6.0.0"
   },
   "scripts": {
-    "package": "npx electron-packager . --out=out --overwrite -platform=win32 --arch=ia32 --icon=favicon.ico --ignore='\/out' --ignore='\/.git' --ignore='\/.gitattributes' --ignore='\/.gitignore'",
+    "package": "npx electron-packager . --out=out --overwrite -platform=win32 --arch=ia32 --icon=favicon.ico --ignore='/out' --ignore='/.git' --ignore='/.gitattributes' --ignore='/.gitignore'",
     "start": "npx electron index.html"
   }
 }
