@@ -7,5 +7,5 @@ npx tsc -p tsconfig.json
 node compile.js "./../resources/"
 cd..
 cd resources
+npm install
 npm run package-windows
-pause
