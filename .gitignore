@@ -108,3 +108,4 @@ releases/
 client_src/
 resources/out/
 resources/client.js
+resources/node_modules/
