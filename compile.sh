@@ -5,7 +5,7 @@ git pull
 npm install
 npx tsc -p tsconfig.json
 node compile.js "./../resources/"
-cd..
+cd -
 cd resources
-npm run package-windows
+npm run package-linux
 pause
