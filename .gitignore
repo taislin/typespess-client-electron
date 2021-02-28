@@ -1,5 +1,10 @@
 resources.zip
 client_src/
 resources/out/
+resources/icons/
+resources/sound/
+resources/client.css
+resources/favicon.ico
+resources/index.html
 resources/client.js
 resources/node_modules/
