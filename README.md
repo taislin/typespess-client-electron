@@ -1,5 +1,5 @@
-# typespess-client-electron
-Civ13's typespess electron client.
+# Typepess Electron Client
+Civ13's typespess [electron](https://electronjs.org) client.
 
 Run the `setup` file to prepare all the folders and clone the dependencies. You will need command line git installed. If you don't, you can also do it manually through your git program - follow the steps on the file.
 
