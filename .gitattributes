@@ -1,2 +1,25 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+.editorconfig   text    eol=lf
+.gitignore      text    eol=lf
+*.css           text    eol=lf
+*.df            text    eol=lf
+*.htm           text    eol=lf
+*.html          text    eol=lf
+*.java          text    eol=lf
+*.js            text    eol=lf
+*.json          text    eol=lf
+*.jsp           text    eol=lf
+*.jspf          text    eol=lf
+*.md            text    eol=lf
+*.properties    text    eol=lf
+*.scss          text    eol=lf
+*.sh            text    eol=lf
+*.tld           text    eol=lf
+*.ts            text    eol=lf
+*.txt           text    eol=lf
+*.xml           text    eol=lf
+*.atom          text    eol=lf
+*.crafting      text    eol=lf
+*.recipes       text    eol=lf
